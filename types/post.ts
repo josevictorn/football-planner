@@ -7,6 +7,10 @@ import {
   NotionText,
 } from "./notion";
 
+export interface GetPostBySlugResponse {
+  content: string;
+}
+
 export interface PostProperties {
   competition: {
     id: string;
