@@ -1,7 +1,7 @@
 // app/page.jsx
 import Link from "next/link";
 import { getDays, getPostsByDay } from "../_services/notion";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 export default async function Home() {
@@ -47,10 +47,10 @@ export default async function Home() {
           <section key={day.id} className="flex flex-col gap-3">
             <header className="flex gap-2 items-baseline">
               <span className="text-xl font-semibold text-zinc-300">
-                Dia {format(day.date!, "d")}
+                Dia {format(parseISO(day.date!), "dd", { locale: ptBR })}
               </span>
               <span className="text-xs text-zinc-500">
-                {format(day.date!, "EEEE", { locale: ptBR })}
+                {format(parseISO(day.date!), "EEEE", { locale: ptBR })}
               </span>
             </header>
             {day.posts.length ? (
