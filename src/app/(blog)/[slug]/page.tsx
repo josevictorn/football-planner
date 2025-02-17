@@ -8,7 +8,7 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post: GetPostBySlugResponse = await getPostBySlug(slug);
 
   return (
