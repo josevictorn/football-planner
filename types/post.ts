@@ -25,6 +25,7 @@ export interface PostProperties {
   day: NotionRelationProperty;
   hour: NotionDateProperty;
   title: NotionTitleProperty;
+  hasPost: { id: string; type: "checkbox"; checkbox: boolean };
 }
 
 export interface PostPage {

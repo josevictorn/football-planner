@@ -1,10 +1,10 @@
 "use server";
 
 import { notion } from "@/lib/notion";
-import { DayPage } from "../../../types/day";
-import { GetPostBySlugResponse, PostPage } from "../../../types/post";
+import { DayPage } from "../../../../types/day";
+import { GetPostBySlugResponse, PostPage } from "../../../../types/post";
 import { NotionToMarkdown } from "notion-to-md";
-import { env } from "../env";
+import { env } from "../../env";
 
 export async function getDays() {
   const response = await notion.databases.query({
